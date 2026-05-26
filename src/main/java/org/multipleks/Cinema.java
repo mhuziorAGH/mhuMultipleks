@@ -8,17 +8,16 @@ public class Cinema {
 
     private String name;
     private String address;
-    private List<String> programme;
+    private List<Hall> hallsList;
 
-    public Cinema(String cinemaName, String adress, List<String> programme) {
+    public Cinema(String cinemaName, String adress, List<Hall> hallsList) {
         this.name = cinemaName;
         this.address = adress;
-        this. programme =programme;
+        this.hallsList = hallsList;
 
     }
 
     public void printProgramme(){
-        System.out.println(programme);
     }
 
 
