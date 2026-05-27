@@ -1,4 +1,4 @@
-package org.multipleks;
+package org.multipleks.struktura;
 
 public enum SeatType {
     STANDARD,

@@ -1,6 +1,4 @@
-package org.multipleks;
-
-import org.multipleks.IO.MovieLoader;
+package org.multipleks.struktura;
 
 import java.util.List;
 

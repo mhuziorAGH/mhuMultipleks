@@ -1,4 +1,4 @@
-package org.multipleks;
+package org.multipleks.struktura;
 
 public class Screen {
     private ScreenType type;

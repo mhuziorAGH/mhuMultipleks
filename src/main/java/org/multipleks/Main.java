@@ -1,6 +1,7 @@
 package org.multipleks;
 
-import org.multipleks.IO.MovieLoader;
+import org.multipleks.struktura.Cinema;
+import org.multipleks.struktura.Hall;
 
 import java.util.ArrayList;
 import java.util.List;
