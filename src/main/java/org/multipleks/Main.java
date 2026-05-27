@@ -2,12 +2,25 @@ package org.multipleks;
 
 import org.multipleks.IO.MovieLoader;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
 
-        MovieLoader movieLoaderCinema1 = new MovieLoader();
+
+        HallFactory hallFactory = new HallFactory();
+        Hall threedHall = hallFactory.create3DHall(50);
+        Hall vipHall = hallFactory.createVipHall(20);
+
+        List<Hall> halls = new ArrayList<>();
+
+        halls.add(threedHall);
+        halls.add(vipHall);
+
+        Cinema cinema1 = new Cinema("Zakopianka", "Kraków", halls);
+
+        //MovieLoader movieLoaderCinema1 = new MovieLoader();
 
         //List<String> movieListCinema1 = movieLoaderCinema1.loadMovies("src/main/resources/movieList.txt");
         //Cinema cinema1 = new Cinema("Super Tarasy", "ul. Akademicka 5", movieListCinema1);
