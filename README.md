@@ -4,23 +4,15 @@ Warstwa struktury:
 - Cinema -> Hall -> Seat + Screen
 
 Warstwa repertuaru:
-- Movie
-- Show
-- Schedule
+- Movie (Ma tytuł, rezysera, opis, czas trwania)
+- Show (Ma jeden movie, jeden HAll, data)
+- Schedule (Ma wiele Show)
 
 Warstwa rezerwacji:
-- Reservation
-- Ticket
-- Customer
+- Reservation (Ma Customer, Ma wiele Seat, Ma Show)
+- Customer (Ma email)
+- Ticket (Ma jedną rezerwację)
 
 Notatki:
-- Cinema ma wiele Hall
-- Cinema ma jeden Name
-- Cinema ma jeden adress
-- Hall ma wiele Seat
-- Hall ma wiele Show
-- Hall ma jeden Screen
-- Show ma jeden Movie
-- Show ma wiele Reservation
-- Do zrobienia: addShow()
-  removeShow()
+- Movie loader
+- zrobienie wirtualnego multipleksu 
