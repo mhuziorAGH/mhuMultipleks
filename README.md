@@ -16,3 +16,8 @@ Warstwa rezerwacji:
 Notatki:
 - Movie loader
 - zrobienie wirtualnego multipleksu 
+
+
+## Schemat UML
+
+![App Screenshot](src/main/resources/SchematMultiples.jpg)
