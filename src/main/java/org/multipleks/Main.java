@@ -4,28 +4,45 @@ import org.multipleks.IO.MovieJsonLoader;
 import org.multipleks.repertuar.Movie;
 import org.multipleks.struktura.Cinema;
 import org.multipleks.struktura.Hall;
+import org.multipleks.struktura.HallFactory;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-
-
-//        HallFactory hallFactory = new HallFactory();
-//        Hall threedHall = hallFactory.create3DHall(50);
-//        Hall vipHall = hallFactory.createVipHall(20);
-//
-//        List<Hall> halls = new ArrayList<>();
-//
-//        halls.add(threedHall);
-//        halls.add(vipHall);
-//
-//        Cinema cinema1 = new Cinema("Zakopianka", "Kraków", halls);
-
+        //Inicjalizacja Multipleksu
         List<Movie> movies = MovieJsonLoader.loadJsonMovies("src/main/resources/movieList.json");
-
         System.out.println(movies.get(0).getDirector());
+
+        HallFactory hallFactory = new HallFactory();
+        List<Hall> halls1 = new ArrayList<>();
+
+        //Multiplex #1
+        Hall threeDHall1 = hallFactory.create3DHall(50);
+        Hall vipHall1 = hallFactory.createVipHall(20);
+        Hall normalHall1 = hallFactory.createNormalHall(50);
+
+        halls1.add(threeDHall1);
+        halls1.add(vipHall1);
+        halls1.add(normalHall1);
+
+        Cinema cinema1 = new Cinema("Zakopianka", "Kraków", halls1);
+
+        //Multiplex #2
+        Hall threeDHall2 = hallFactory.create3DHall(40);
+        Hall vipHall2 = hallFactory.createVipHall(10);
+        Hall normalHall2 = hallFactory.createNormalHall(40);
+
+        List<Hall> halls2 = new ArrayList<>();
+
+        halls2.add(threeDHall2);
+        halls2.add(vipHall2);
+        halls2.add(normalHall2);
+
+        Cinema cinema2 = new Cinema("Bonarka", "Kraków", halls2);
+
+
 
         //... configuration and test data should be inserted here...
         // below you will find sample function executions

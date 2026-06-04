@@ -1,6 +1,4 @@
-package org.multipleks;
-
-import org.multipleks.struktura.*;
+package org.multipleks.struktura;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +20,17 @@ public class HallFactory {
     }
     public static Hall create3DHall(int numberOfSeats){
         Screen screen = new Screen(ScreenType.THREE_D);
+        List<Seat> seats = new ArrayList<>();
+
+        for (int i = 1; i <= numberOfSeats; i++) {
+            seats.add(
+                    new Seat(SeatType.STANDARD, i)
+            );
+        }
+        return new Hall(screen,seats);
+    }
+    public static Hall createNormalHall(int numberOfSeats){
+        Screen screen = new Screen(ScreenType.STANDARD);
         List<Seat> seats = new ArrayList<>();
 
         for (int i = 1; i <= numberOfSeats; i++) {
