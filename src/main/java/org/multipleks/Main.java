@@ -1,5 +1,7 @@
 package org.multipleks;
 
+import org.multipleks.IO.MovieJsonLoader;
+import org.multipleks.repertuar.Movie;
 import org.multipleks.struktura.Cinema;
 import org.multipleks.struktura.Hall;
 
@@ -10,22 +12,20 @@ public class Main {
     public static void main(String[] args) {
 
 
-        HallFactory hallFactory = new HallFactory();
-        Hall threedHall = hallFactory.create3DHall(50);
-        Hall vipHall = hallFactory.createVipHall(20);
+//        HallFactory hallFactory = new HallFactory();
+//        Hall threedHall = hallFactory.create3DHall(50);
+//        Hall vipHall = hallFactory.createVipHall(20);
+//
+//        List<Hall> halls = new ArrayList<>();
+//
+//        halls.add(threedHall);
+//        halls.add(vipHall);
+//
+//        Cinema cinema1 = new Cinema("Zakopianka", "Kraków", halls);
 
-        List<Hall> halls = new ArrayList<>();
+        List<Movie> movies = MovieJsonLoader.loadJsonMovies("src/main/resources/movieList.json");
 
-        halls.add(threedHall);
-        halls.add(vipHall);
-
-        Cinema cinema1 = new Cinema("Zakopianka", "Kraków", halls);
-
-        //MovieLoader movieLoaderCinema1 = new MovieLoader();
-
-        //List<String> movieListCinema1 = movieLoaderCinema1.loadMovies("src/main/resources/movieList.txt");
-        //Cinema cinema1 = new Cinema("Super Tarasy", "ul. Akademicka 5", movieListCinema1);
-        //Dokończyć ten moduł iO i moduł z rezerwacją i lista seansow
+        System.out.println(movies.get(0).getDirector());
 
         //... configuration and test data should be inserted here...
         // below you will find sample function executions

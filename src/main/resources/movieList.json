@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "title": "The Shawshank Redemption",
+    "director": "Frank Darabont",
+    "description": "Two imprisoned men bond over a number of years...",
+    "durationInMinutes": 144
+  },
+  {
+    "id": 2,
+    "title": "Matrix",
+    "director": "Lilly Wachowski, Lana Wachowski",
+    "description": "Haker komputerowy Neo dowiaduje się od tajemniczych rebeliantów, że świat, w którym żyje, jest tylko obrazem przesyłanym do jego mózgu przez roboty.",
+    "durationInMinutes": 136
+  },
+  {
+    "id": 3,
+    "title": "Władca Pierścieni: Powrót króla",
+    "director": "Peter Jackson",
+    "description": "Zwieńczenie filmowej trylogii wg powieści Tolkiena. Aragorn jednoczy siły Śródziemia, szykując się do bitwy, która ma odwrócić uwagę Saurona od podążających w kierunku Góry Przeznaczenia hobbitów.",
+    "durationInMinutes": 201
+  }
+]
