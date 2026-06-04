@@ -14,7 +14,9 @@ Warstwa rezerwacji:
 - Ticket (Ma jedną rezerwację)
 
 Notatki:
-- zrobienie wirtualnego multipleksu 
+- Dodaneie indeksów dla krzeseł (krzesło nr1, rząd n1 itd.) 
+- Ogrnięcie klasy "Show"
+- Rozplanowanie rezerwacji
 
 
 ## Schemat UML

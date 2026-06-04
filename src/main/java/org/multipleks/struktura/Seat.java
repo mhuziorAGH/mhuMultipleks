@@ -9,4 +9,19 @@ public class Seat {
         this.number = number;
     }
 
+    public SeatType getType() {
+        return type;
+    }
+
+    public void setType(SeatType type) {
+        this.type = type;
+    }
+
+    public int getNumber() {
+        return number;
+    }
+
+    public void setNumber(int number) {
+        this.number = number;
+    }
 }

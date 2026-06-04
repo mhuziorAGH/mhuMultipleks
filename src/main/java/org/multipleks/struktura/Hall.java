@@ -15,4 +15,28 @@ public class Hall {
         this.seatsList = seatsList;
         this.showList = showList;
     };
+
+    public Screen getScreen() {
+        return screen;
+    }
+
+    public void setScreen(Screen screen) {
+        this.screen = screen;
+    }
+
+    public List<Seat> getSeatsList() {
+        return seatsList;
+    }
+
+    public void setSeatsList(List<Seat> seatsList) {
+        this.seatsList = seatsList;
+    }
+
+    public List<Show> getShowList() {
+        return showList;
+    }
+
+    public void setShowList(List<Show> showList) {
+        this.showList = showList;
+    }
 }
