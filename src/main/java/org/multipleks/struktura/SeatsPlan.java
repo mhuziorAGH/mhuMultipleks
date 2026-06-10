@@ -15,6 +15,24 @@ public class SeatsPlan {
             rowList.get(i).setRowName(String.valueOf((char) asciStart));
         }
     }
+    public void reservePlaces(String... seatIndexes){
+        boolean rowFound = false;
+        for (String seatIndex : seatIndexes){
+            for (int i = 0; i<rowList.size(); i++) {
+                if (rowList.get(i).getRowName().equals(seatIndex.substring(0, 1))) {
+                    rowFound = true;
+                    int seatNumber = Integer.parseInt(seatIndex.substring(1));
+                    Seat seat = rowList.get(i).getSeatsList().get(seatNumber-1);
+                    if(seat.isAvailable()){
+                        seat.setSeatState(SeatState.NOTAVAILABLE);
+                    }else throw new IllegalArgumentException("To miejsce jest już zajęte");
+                }
+            }
+            if (!rowFound) {
+                throw new IllegalArgumentException("Nie istnieje rząd: " + seatIndex.substring(0, 1));
+            }
+        }
+    }
 
     public List<Row> getRowList() {
         return rowList;

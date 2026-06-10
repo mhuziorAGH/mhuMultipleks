@@ -43,8 +43,10 @@ public class Main {
         Cinema cinema2 = new Cinema("Bonarka", "Kraków", halls2);
 
         System.out.println(cinema2.getHallsList().get(0).getSeatsPlan().getRowList().get(3).getRowName());
-        System.out.println(cinema2.getHallsList().get(0).getSeatsPlan().getRowList().get(3).getSeatsList().size());
+        System.out.println(cinema2.getHallsList().get(0).getSeatsPlan().getRowList().get(3).getSeatsList().get(5).getNumber());
 
+        cinema2.getHallsList().get(0).getSeatsPlan().reservePlaces("A40");
+        cinema2.getHallsList().get(0).getSeatsPlan().reservePlaces("Z40");
 
         //... configuration and test data should be inserted here...
         // below you will find sample function executions
