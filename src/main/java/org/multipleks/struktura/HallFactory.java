@@ -9,38 +9,40 @@ public class HallFactory {
 
         Screen screen = new Screen(ScreenType.STANDARD);
         List<Row> rows = new ArrayList<>();
-
         for (int i = 1; i <= numberOfRows; i++){
             List<Seat> seats = new ArrayList<>();
             for (int z = 1; z <= numberOfSeatsInRow; z++) {
                 seats.add(new Seat(SeatType.COMFORT, z));
             }
-            rows.add(new Row("void", seats));
+            rows.add(new Row(seats));
         }
-
         SeatsPlan seatsPlan = new SeatsPlan(rows);
         return new Hall(screen, seatsPlan);
     }
-    public static Hall create3DHall(int numberOfSeats){
+    public static Hall create3DHall(int numberOfSeatsInRow, int numberOfRows){
         Screen screen = new Screen(ScreenType.THREE_D);
-        List<Seat> seats = new ArrayList<>();
-
-        for (int i = 1; i <= numberOfSeats; i++) {
-            seats.add(
-                    new Seat(SeatType.STANDARD, i)
-            );
+        List<Row> rows = new ArrayList<>();
+        for (int i = 1; i <= numberOfRows; i++){
+            List<Seat> seats = new ArrayList<>();
+            for (int z = 1; z <= numberOfSeatsInRow; z++) {
+                seats.add(new Seat(SeatType.STANDARD, z));
+            }
+            rows.add(new Row(seats));
         }
-        return new Hall(screen,seats);
+        SeatsPlan seatsPlan = new SeatsPlan(rows);
+        return new Hall(screen, seatsPlan);
     }
-    public static Hall createNormalHall(int numberOfSeats){
+    public static Hall createNormalHall(int numberOfSeatsInRow, int numberOfRows){
         Screen screen = new Screen(ScreenType.STANDARD);
-        List<Seat> seats = new ArrayList<>();
-
-        for (int i = 1; i <= numberOfSeats; i++) {
-            seats.add(
-                    new Seat(SeatType.STANDARD, i)
-            );
+        List<Row> rows = new ArrayList<>();
+        for (int i = 1; i <= numberOfRows; i++){
+            List<Seat> seats = new ArrayList<>();
+            for (int z = 1; z <= numberOfSeatsInRow; z++) {
+                seats.add(new Seat(SeatType.STANDARD, z));
+            }
+            rows.add(new Row(seats));
         }
-        return new Hall(screen,seats);
+        SeatsPlan seatsPlan = new SeatsPlan(rows);
+        return new Hall(screen, seatsPlan);
     }
 }

@@ -14,7 +14,6 @@ public class Hall {
     public Hall (Screen screen, SeatsPlan seatsPlan){
         this.screen = screen;
         this.seatsPlan = seatsPlan;
-        this.showList = showList;
     };
 
     public Screen getScreen() {

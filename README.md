@@ -14,7 +14,6 @@ Warstwa rezerwacji:
 - Ticket (Ma jedną rezerwację)
 
 Notatki:
-- Dodaneie indeksów dla krzeseł (krzesło nr1, rząd n1 itd.)
 - Ogrnięcie klasy "Show"
 - Rozplanowanie rezerwacji
 

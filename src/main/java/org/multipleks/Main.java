@@ -19,9 +19,9 @@ public class Main {
         List<Hall> halls1 = new ArrayList<>();
 
         //Multiplex #1
-        Hall threeDHall1 = hallFactory.create3DHall(50);
-        Hall vipHall1 = hallFactory.createVipHall(20);
-        Hall normalHall1 = hallFactory.createNormalHall(50);
+        Hall threeDHall1 = hallFactory.create3DHall(30, 7);
+        Hall vipHall1 = hallFactory.createVipHall(10, 5);
+        Hall normalHall1 = hallFactory.createNormalHall(30, 7);
 
         halls1.add(threeDHall1);
         halls1.add(vipHall1);
@@ -30,9 +30,9 @@ public class Main {
         Cinema cinema1 = new Cinema("Zakopianka", "Kraków", halls1);
 
         //Multiplex #2
-        Hall threeDHall2 = hallFactory.create3DHall(40);
-        Hall vipHall2 = hallFactory.createVipHall(10);
-        Hall normalHall2 = hallFactory.createNormalHall(40);
+        Hall threeDHall2 = hallFactory.create3DHall(40, 7);
+        Hall vipHall2 = hallFactory.createVipHall(10, 5);
+        Hall normalHall2 = hallFactory.createNormalHall(40, 7);
 
         List<Hall> halls2 = new ArrayList<>();
 
@@ -42,7 +42,8 @@ public class Main {
 
         Cinema cinema2 = new Cinema("Bonarka", "Kraków", halls2);
 
-        //System.out.println(cinema2.getHallsList().get(0).getRowList().get(0).getType());
+        System.out.println(cinema2.getHallsList().get(0).getSeatsPlan().getRowList().get(3).getRowName());
+        System.out.println(cinema2.getHallsList().get(0).getSeatsPlan().getRowList().get(3).getSeatsList().size());
 
 
         //... configuration and test data should be inserted here...

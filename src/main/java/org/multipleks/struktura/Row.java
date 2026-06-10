@@ -6,8 +6,7 @@ public class Row {
     private String rowName;
     private List<Seat> seatsList;
 
-    public Row(String rowName, List<Seat> seatsList) {
-        this.rowName = rowName;
+    public Row(List<Seat> seatsList) {
         this.seatsList = seatsList;
     }
 
