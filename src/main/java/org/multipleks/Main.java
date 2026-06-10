@@ -42,7 +42,7 @@ public class Main {
 
         Cinema cinema2 = new Cinema("Bonarka", "Kraków", halls2);
 
-        System.out.println(cinema2.getHallsList().get(0).getSeatsList().get(0).getType());
+        //System.out.println(cinema2.getHallsList().get(0).getRowList().get(0).getType());
 
 
         //... configuration and test data should be inserted here...

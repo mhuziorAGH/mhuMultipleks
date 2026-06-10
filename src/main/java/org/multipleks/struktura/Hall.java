@@ -7,12 +7,13 @@ import java.util.List;
 
 public class Hall {
     private Screen screen;
-    private List<Seat> seatsList;
+    private SeatsPlan seatsPlan;
     private List<Show> showList = new ArrayList<>();
 
-    public Hall (Screen screen, List<Seat> seatsList){
+
+    public Hall (Screen screen, SeatsPlan seatsPlan){
         this.screen = screen;
-        this.seatsList = seatsList;
+        this.seatsPlan = seatsPlan;
         this.showList = showList;
     };
 
@@ -24,19 +25,19 @@ public class Hall {
         this.screen = screen;
     }
 
-    public List<Seat> getSeatsList() {
-        return seatsList;
-    }
-
-    public void setSeatsList(List<Seat> seatsList) {
-        this.seatsList = seatsList;
-    }
-
     public List<Show> getShowList() {
         return showList;
     }
 
     public void setShowList(List<Show> showList) {
         this.showList = showList;
+    }
+
+    public SeatsPlan getSeatsPlan() {
+        return seatsPlan;
+    }
+
+    public void setSeatsPlan(SeatsPlan seatsPlan) {
+        this.seatsPlan = seatsPlan;
     }
 }

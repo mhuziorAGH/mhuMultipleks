@@ -1,7 +1,7 @@
 # mhuMultipleks
 
 Warstwa struktury:
-- Cinema -> Hall -> Seat + Screen
+- Cinema -> Hall + Screen -> Row -> Seat
 
 Warstwa repertuaru:
 - Movie (Ma tytuł, rezysera, opis, czas trwania)
@@ -14,7 +14,7 @@ Warstwa rezerwacji:
 - Ticket (Ma jedną rezerwację)
 
 Notatki:
-- Dodaneie indeksów dla krzeseł (krzesło nr1, rząd n1 itd.) 
+- Dodaneie indeksów dla krzeseł (krzesło nr1, rząd n1 itd.)
 - Ogrnięcie klasy "Show"
 - Rozplanowanie rezerwacji
 
