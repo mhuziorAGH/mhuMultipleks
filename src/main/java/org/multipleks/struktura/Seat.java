@@ -2,11 +2,24 @@ package org.multipleks.struktura;
 
 public class Seat {
     private SeatType type;
+    private SeatState seatState;
     private int number;
 
     public Seat(SeatType type, int number) {
         this.type = type;
         this.number = number;
+        this.seatState = SeatState.AVAILABLE;
+    }
+    public boolean isAvailable() {
+        return seatState == SeatState.AVAILABLE;
+    }
+
+    public SeatState getSeatState() {
+        return seatState;
+    }
+
+    public void setSeatState(SeatState seatState) {
+        this.seatState = seatState;
     }
 
     public SeatType getType() {
