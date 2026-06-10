@@ -14,7 +14,6 @@ Warstwa rezerwacji:
 - Ticket (Ma jedną rezerwację)
 
 Notatki:
-- Ogrnięcie klasy "Show"
 - Rozplanowanie rezerwacji
 
 
