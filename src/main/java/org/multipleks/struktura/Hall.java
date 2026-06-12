@@ -15,6 +15,7 @@ public class Hall {
     public Hall (Screen screen, SeatsPlan seatsPlan, double price){
         this.screen = screen;
         this.seatsPlan = seatsPlan;
+        this.price = price;
     };
 
     public double getPrice() {

@@ -3,6 +3,7 @@ package org.multipleks.repertuar;
 import org.multipleks.rezerwacja.Customer;
 import org.multipleks.rezerwacja.RegisteredCustomer;
 import org.multipleks.rezerwacja.Reservation;
+import org.multipleks.rezerwacja.Ticket;
 import org.multipleks.struktura.Hall;
 import org.multipleks.struktura.Seat;
 
@@ -30,6 +31,16 @@ public class Show {
                 ((RegisteredCustomer) customer).addReservation(reservation);
             } else throw new IllegalArgumentException("Załóż konto by zarezerwować miejsce!");
         } else throw new IllegalArgumentException("Nie można kupić biletów po dacie seansu!");
+    }
+    public List<Ticket> buyTicket(String... seatIndexes){
+        List<Ticket> ticketList = new ArrayList<>();
+        List<Seat> seatList = hall.getSeatsPlan().findAndReserve(seatIndexes);
+        double price = hall.getPrice();
+        for (Seat seat : seatList) {
+            Ticket ticket = new Ticket(seat, this, price);
+            ticketList.add(ticket);
+        }
+        return ticketList;
     }
 
     public List<Reservation> getReservationList() {

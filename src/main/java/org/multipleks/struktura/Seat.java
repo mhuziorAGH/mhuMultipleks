@@ -4,6 +4,7 @@ public class Seat {
     private SeatType type;
     private SeatState seatState;
     private int number;
+    private String rowName;
 
     public Seat(SeatType type, int number) {
         this.type = type;
@@ -12,6 +13,14 @@ public class Seat {
     }
     public boolean isAvailable() {
         return seatState == SeatState.AVAILABLE;
+    }
+
+    public String getRowName() {
+        return rowName;
+    }
+
+    public void setRowName(String rowName) {
+        this.rowName = rowName;
     }
 
     public SeatState getSeatState() {

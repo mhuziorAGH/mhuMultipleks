@@ -27,6 +27,7 @@ public class SeatsPlan {
                     Seat seat = rowList.get(i).getSeatsList().get(seatNumber-1);
                     if(seat.isAvailable()){
                         seat.setSeatState(SeatState.NOTAVAILABLE);
+                        seat.setRowName(rowList.get(i).getRowName());
                         seatList.add(seat);
                     }else throw new IllegalArgumentException("To miejsce jest już zajęte");
                 }

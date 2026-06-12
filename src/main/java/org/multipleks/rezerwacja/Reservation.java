@@ -3,6 +3,7 @@ import org.multipleks.repertuar.Show;
 import org.multipleks.struktura.Seat;
 import org.multipleks.struktura.SeatsPlan;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Reservation {
@@ -14,6 +15,15 @@ public class Reservation {
         this.show = show;
         this.seats = seats;
         this.customer = customer;
+    }
+    public List<Ticket> finalizeReservation(){
+        List<Ticket> ticketList = new ArrayList<>();
+        for (Seat seat : seats){
+            double price = this.show.getHall().getPrice();
+            Ticket ticket = new Ticket(seat, show, price);
+            ticketList.add(ticket);
+        }
+        return ticketList;
     }
 
     public Show getShow() {
