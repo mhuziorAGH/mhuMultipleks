@@ -25,11 +25,11 @@ public class Show {
         if (LocalDateTime.now().isBefore(date)){
             List<Seat> reservedSeats = hall.getSeatsPlan().findAndReserve(seatIndexes);
             Reservation reservation = new Reservation(this, reservedSeats, customer);
-            reservationList.add(reservation);
             if (customer instanceof RegisteredCustomer) {
+                reservationList.add(reservation);
                 ((RegisteredCustomer) customer).addReservation(reservation);
-            }
-        } else throw new IllegalArgumentException("Nie można kupić biletów po dacie seansu");
+            } else throw new IllegalArgumentException("Załóż konto by zarezerwować miejsce!");
+        } else throw new IllegalArgumentException("Nie można kupić biletów po dacie seansu!");
     }
 
     public List<Reservation> getReservationList() {

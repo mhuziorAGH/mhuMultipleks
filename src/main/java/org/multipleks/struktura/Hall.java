@@ -8,13 +8,18 @@ import java.util.List;
 public class Hall {
     private Screen screen;
     private SeatsPlan seatsPlan;
+    private double price;
     private List<Show> showList = new ArrayList<>();
 
 
-    public Hall (Screen screen, SeatsPlan seatsPlan){
+    public Hall (Screen screen, SeatsPlan seatsPlan, double price){
         this.screen = screen;
         this.seatsPlan = seatsPlan;
     };
+
+    public double getPrice() {
+        return price;
+    }
 
     public Screen getScreen() {
         return screen;

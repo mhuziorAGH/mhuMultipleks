@@ -5,7 +5,7 @@ import java.util.List;
 
 public class HallFactory {
 
-    public static Hall createVipHall(int numberOfSeatsInRow, int numberOfRows) {
+    public static Hall createVipHall(int numberOfSeatsInRow, int numberOfRows, double baseTicketPrice) {
 
         Screen screen = new Screen(ScreenType.STANDARD);
         List<Row> rows = new ArrayList<>();
@@ -17,9 +17,9 @@ public class HallFactory {
             rows.add(new Row(seats));
         }
         SeatsPlan seatsPlan = new SeatsPlan(rows);
-        return new Hall(screen, seatsPlan);
+        return new Hall(screen, seatsPlan, baseTicketPrice);
     }
-    public static Hall create3DHall(int numberOfSeatsInRow, int numberOfRows){
+    public static Hall create3DHall(int numberOfSeatsInRow, int numberOfRows, double baseTicketPrice){
         Screen screen = new Screen(ScreenType.THREE_D);
         List<Row> rows = new ArrayList<>();
         for (int i = 1; i <= numberOfRows; i++){
@@ -30,9 +30,9 @@ public class HallFactory {
             rows.add(new Row(seats));
         }
         SeatsPlan seatsPlan = new SeatsPlan(rows);
-        return new Hall(screen, seatsPlan);
+        return new Hall(screen, seatsPlan, baseTicketPrice);
     }
-    public static Hall createNormalHall(int numberOfSeatsInRow, int numberOfRows){
+    public static Hall createNormalHall(int numberOfSeatsInRow, int numberOfRows, double baseTicketPrice){
         Screen screen = new Screen(ScreenType.STANDARD);
         List<Row> rows = new ArrayList<>();
         for (int i = 1; i <= numberOfRows; i++){
@@ -43,6 +43,6 @@ public class HallFactory {
             rows.add(new Row(seats));
         }
         SeatsPlan seatsPlan = new SeatsPlan(rows);
-        return new Hall(screen, seatsPlan);
+        return new Hall(screen, seatsPlan, baseTicketPrice);
     }
 }

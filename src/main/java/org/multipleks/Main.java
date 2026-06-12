@@ -15,13 +15,13 @@ public class Main {
         List<Movie> movies = MovieJsonLoader.loadJsonMovies("src/main/resources/movieList.json");
         //System.out.println(movies.get(0).getDirector());
 
+        //Multiplex #1
         HallFactory hallFactory = new HallFactory();
         List<Hall> halls1 = new ArrayList<>();
 
-        //Multiplex #1
-        Hall threeDHall1 = hallFactory.create3DHall(30, 7);
-        Hall vipHall1 = hallFactory.createVipHall(10, 5);
-        Hall normalHall1 = hallFactory.createNormalHall(30, 7);
+        Hall threeDHall1 = hallFactory.create3DHall(30, 7, 30);
+        Hall vipHall1 = hallFactory.createVipHall(10, 5, 50);
+        Hall normalHall1 = hallFactory.createNormalHall(30, 7, 20);
 
         halls1.add(threeDHall1);
         halls1.add(vipHall1);
@@ -30,11 +30,12 @@ public class Main {
         Cinema cinema1 = new Cinema("Zakopianka", "Kraków", halls1);
 
         //Multiplex #2
-        Hall threeDHall2 = hallFactory.create3DHall(40, 7);
-        Hall vipHall2 = hallFactory.createVipHall(10, 5);
-        Hall normalHall2 = hallFactory.createNormalHall(40, 7);
-
+        HallFactory hallFactory2 = new HallFactory();
         List<Hall> halls2 = new ArrayList<>();
+
+        Hall threeDHall2 = hallFactory2.create3DHall(40, 7, 40);
+        Hall vipHall2 = hallFactory2.createVipHall(10, 5, 45);
+        Hall normalHall2 = hallFactory2.createNormalHall(40, 7, 16);
 
         halls2.add(threeDHall2);
         halls2.add(vipHall2);
@@ -42,6 +43,7 @@ public class Main {
 
         Cinema cinema2 = new Cinema("Bonarka", "Kraków", halls2);
 
+        //Metody do wywołania
         System.out.println(cinema2.getHallsList().get(0).getSeatsPlan().getRowList().get(3).getRowName());
         System.out.println(cinema2.getHallsList().get(0).getSeatsPlan().getRowList().get(3).getSeatsList().get(5).getNumber());
 
