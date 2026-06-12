@@ -45,8 +45,7 @@ public class Main {
         System.out.println(cinema2.getHallsList().get(0).getSeatsPlan().getRowList().get(3).getRowName());
         System.out.println(cinema2.getHallsList().get(0).getSeatsPlan().getRowList().get(3).getSeatsList().get(5).getNumber());
 
-        cinema2.getHallsList().get(0).getSeatsPlan().reservePlaces("A40");
-        cinema2.getHallsList().get(0).getSeatsPlan().reservePlaces("Z40");
+
 
         //... configuration and test data should be inserted here...
         // below you will find sample function executions

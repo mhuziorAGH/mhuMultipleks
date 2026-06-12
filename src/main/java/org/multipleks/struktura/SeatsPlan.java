@@ -1,5 +1,6 @@
 package org.multipleks.struktura;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class SeatsPlan {
@@ -15,9 +16,10 @@ public class SeatsPlan {
             rowList.get(i).setRowName(String.valueOf((char) asciStart));
         }
     }
-    public void reservePlaces(String... seatIndexes){
-        boolean rowFound = false;
+    public List<Seat> findAndReserve(String... seatIndexes){
+        List<Seat> seatList = new ArrayList<>();
         for (String seatIndex : seatIndexes){
+            boolean rowFound = false;
             for (int i = 0; i<rowList.size(); i++) {
                 if (rowList.get(i).getRowName().equals(seatIndex.substring(0, 1))) {
                     rowFound = true;
@@ -25,6 +27,7 @@ public class SeatsPlan {
                     Seat seat = rowList.get(i).getSeatsList().get(seatNumber-1);
                     if(seat.isAvailable()){
                         seat.setSeatState(SeatState.NOTAVAILABLE);
+                        seatList.add(seat);
                     }else throw new IllegalArgumentException("To miejsce jest już zajęte");
                 }
             }
@@ -32,6 +35,7 @@ public class SeatsPlan {
                 throw new IllegalArgumentException("Nie istnieje rząd: " + seatIndex.substring(0, 1));
             }
         }
+        return seatList;
     }
 
     public List<Row> getRowList() {

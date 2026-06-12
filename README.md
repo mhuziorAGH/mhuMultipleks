@@ -14,7 +14,8 @@ Warstwa rezerwacji:
 - Ticket (Ma jedną rezerwację)
 
 Notatki:
-- Rozplanowanie rezerwacji
+- Ticket do ogarnięcia 
+- Schedule do ogarnięcia
 
 
 ## Schemat UML
