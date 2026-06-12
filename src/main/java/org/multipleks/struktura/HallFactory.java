@@ -17,7 +17,9 @@ public class HallFactory {
             rows.add(new Row(seats));
         }
         SeatsPlan seatsPlan = new SeatsPlan(rows);
-        return new Hall(screen, seatsPlan, baseTicketPrice);
+        Hall hall = new Hall(screen, seatsPlan, baseTicketPrice);
+        hall.setHallName("Sala VIP");
+        return hall;
     }
     public static Hall create3DHall(int numberOfSeatsInRow, int numberOfRows, double baseTicketPrice){
         Screen screen = new Screen(ScreenType.THREE_D);
@@ -30,7 +32,9 @@ public class HallFactory {
             rows.add(new Row(seats));
         }
         SeatsPlan seatsPlan = new SeatsPlan(rows);
-        return new Hall(screen, seatsPlan, baseTicketPrice);
+        Hall hall = new Hall(screen, seatsPlan, baseTicketPrice);
+        hall.setHallName("Sala 3D");
+        return hall;
     }
     public static Hall createNormalHall(int numberOfSeatsInRow, int numberOfRows, double baseTicketPrice){
         Screen screen = new Screen(ScreenType.STANDARD);
@@ -43,6 +47,8 @@ public class HallFactory {
             rows.add(new Row(seats));
         }
         SeatsPlan seatsPlan = new SeatsPlan(rows);
-        return new Hall(screen, seatsPlan, baseTicketPrice);
+        Hall hall = new Hall(screen, seatsPlan, baseTicketPrice);
+        hall.setHallName("Sala Standard");
+        return hall;
     }
 }

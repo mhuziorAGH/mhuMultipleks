@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Hall {
+    private String hallName;
     private Screen screen;
     private SeatsPlan seatsPlan;
     private double price;
@@ -18,10 +19,21 @@ public class Hall {
         this.price = price;
     };
 
+    public String getHallName() {
+        return hallName;
+    }
+
+    public void setHallName(String hallName) {
+        this.hallName = hallName;
+    }
+
     public double getPrice() {
         return price;
     }
 
+    public void addShow(Show show){
+        showList.add(show);
+    }
     public Screen getScreen() {
         return screen;
     }

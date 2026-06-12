@@ -2,10 +2,12 @@ package org.multipleks;
 
 import org.multipleks.IO.MovieJsonLoader;
 import org.multipleks.repertuar.Movie;
+import org.multipleks.repertuar.Show;
 import org.multipleks.struktura.Cinema;
 import org.multipleks.struktura.Hall;
 import org.multipleks.struktura.HallFactory;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,6 +29,17 @@ public class Main {
         halls1.add(vipHall1);
         halls1.add(normalHall1);
 
+        Show show1 = new Show(movies.get(0), threeDHall1, LocalDateTime.of(2026, 6, 15, 18, 0));
+        Show show2 = new Show(movies.get(1), vipHall1, LocalDateTime.of(2026, 6, 15, 17, 0));
+        Show show3 = new Show(movies.get(2), normalHall1, LocalDateTime.of(2026, 6, 15, 16, 0));
+        Show show4 = new Show(movies.get(0), normalHall1, LocalDateTime.of(2026, 6, 10, 12, 0));
+
+        threeDHall1.addShow(show1);
+        vipHall1.addShow(show2);
+        normalHall1.addShow(show3);
+        normalHall1.addShow(show4);
+
+
         Cinema cinema1 = new Cinema("Zakopianka", "Kraków", halls1);
 
         //Multiplex #2
@@ -44,9 +57,10 @@ public class Main {
         Cinema cinema2 = new Cinema("Bonarka", "Kraków", halls2);
 
         //Metody do wywołania
-        System.out.println(cinema2.getHallsList().get(0).getSeatsPlan().getRowList().get(3).getRowName());
-        System.out.println(cinema2.getHallsList().get(0).getSeatsPlan().getRowList().get(3).getSeatsList().get(5).getNumber());
+        //System.out.println(cinema2.getHallsList().get(0).getSeatsPlan().getRowList().get(3).getRowName());
+        //System.out.println(cinema2.getHallsList().get(0).getSeatsPlan().getRowList().get(3).getSeatsList().get(5).getNumber());
 
+        cinema1.printProgramme();
 
 
         //... configuration and test data should be inserted here...
