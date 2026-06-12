@@ -22,6 +22,7 @@ public class Reservation {
             double price = this.show.getHall().getPrice();
             Ticket ticket = new Ticket(seat, show, price);
             ticketList.add(ticket);
+            ((RegisteredCustomer) customer).addTicket(ticket);
         }
         return ticketList;
     }

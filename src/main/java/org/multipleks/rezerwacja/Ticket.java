@@ -14,6 +14,23 @@ public class Ticket {
         this.show = show;
         this.price = price;
     }
+    public void printTicket(){
+        System.out.println("===========================");
+        System.out.println("Bilet na:");
+        String title = show.getMovie().getTitle();
+        System.out.println(title);
+        System.out.println("Sala:");
+        String hallName = show.getHall().getHallName();
+        System.out.println(hallName);
+        System.out.println("Rząd:");
+        String rowPlace = seat.getRowName();
+        System.out.println(rowPlace);
+        System.out.println("Miejsce:");
+        int seatPlace = seat.getNumber();
+        System.out.println(seatPlace);
+        System.out.println("Cena: "+price+" PLN");
+        System.out.println("===========================");
+    }
 
     public Seat getSeat() {
         return seat;

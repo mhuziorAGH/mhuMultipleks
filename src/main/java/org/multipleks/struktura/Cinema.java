@@ -34,7 +34,7 @@ public class Cinema {
                     Movie movie = show.getMovie();
                     System.out.println(movie.getTitle());
                     System.out.println(movie.getDirector());
-                    System.out.println(movie.getDescription());
+                    System.out.println(movie.getDescription()+"\n");
                 }
             }
         }

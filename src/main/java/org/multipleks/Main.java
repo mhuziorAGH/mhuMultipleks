@@ -3,6 +3,9 @@ package org.multipleks;
 import org.multipleks.IO.MovieJsonLoader;
 import org.multipleks.repertuar.Movie;
 import org.multipleks.repertuar.Show;
+import org.multipleks.rezerwacja.Customer;
+import org.multipleks.rezerwacja.RegisteredCustomer;
+import org.multipleks.rezerwacja.Ticket;
 import org.multipleks.struktura.Cinema;
 import org.multipleks.struktura.Hall;
 import org.multipleks.struktura.HallFactory;
@@ -13,14 +16,15 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        //Inicjalizacja Multipleksu
+        //możliwość postawienia 1 systemu dla 2 lub więcej kin
+
         List<Movie> movies = MovieJsonLoader.loadJsonMovies("src/main/resources/movieList.json");
-        //System.out.println(movies.get(0).getDirector());
 
         //Multiplex #1
         HallFactory hallFactory = new HallFactory();
         List<Hall> halls1 = new ArrayList<>();
 
+        //chcemy mieć możliwość obsługi seansów VIP i 3D
         Hall threeDHall1 = hallFactory.create3DHall(30, 7, 30);
         Hall vipHall1 = hallFactory.createVipHall(10, 5, 50);
         Hall normalHall1 = hallFactory.createNormalHall(30, 7, 20);
@@ -29,9 +33,9 @@ public class Main {
         halls1.add(vipHall1);
         halls1.add(normalHall1);
 
-        Show show1 = new Show(movies.get(0), threeDHall1, LocalDateTime.of(2026, 6, 15, 18, 0));
-        Show show2 = new Show(movies.get(1), vipHall1, LocalDateTime.of(2026, 6, 15, 17, 0));
-        Show show3 = new Show(movies.get(2), normalHall1, LocalDateTime.of(2026, 6, 15, 16, 0));
+        Show show1 = new Show(movies.get(1), threeDHall1, LocalDateTime.of(2026, 6, 15, 18, 0));
+        Show show2 = new Show(movies.get(2), vipHall1, LocalDateTime.of(2026, 6, 15, 17, 0));
+        Show show3 = new Show(movies.get(0), normalHall1, LocalDateTime.of(2026, 6, 15, 16, 0));
         Show show4 = new Show(movies.get(0), normalHall1, LocalDateTime.of(2026, 6, 10, 12, 0));
 
         threeDHall1.addShow(show1);
@@ -55,22 +59,29 @@ public class Main {
         halls2.add(normalHall2);
 
         Cinema cinema2 = new Cinema("Bonarka", "Kraków", halls2);
+        //itd...
 
-        //Metody do wywołania
-        //System.out.println(cinema2.getHallsList().get(0).getSeatsPlan().getRowList().get(3).getRowName());
-        //System.out.println(cinema2.getHallsList().get(0).getSeatsPlan().getRowList().get(3).getSeatsList().get(5).getNumber());
+        //Metody do wywołania----------------------------------------------------------------------
 
+        //możliwość rezerwacji miejsc przed seansem
+        RegisteredCustomer registeredCustomer = new RegisteredCustomer("Jnowak.gmail.com", "Jan", "Nowak", "jnowaczek123", "1234$#@!" );
+        cinema1.getHallsList().get(0).getShowList().get(0).reservePlaces(registeredCustomer,"A12", "A13");
+
+        //chcemy mieć możliwość kupienia biletów z wyprzedzeniem
+        List<Ticket> ticket1 = cinema1.getHallsList().get(0).getShowList().get(0).getReservationList().get(0).finalizeReservation();
+        //ticket1.get(0).printTicket();
+
+        //możliwość sprawdzenia repertuaru na najbliższy tydzień
         cinema1.printProgramme();
 
+        //chcemy mieć możliwość sprawdzenia swoich biletów
+        //registeredCustomer.listTickets();
 
-        //... configuration and test data should be inserted here...
-        // below you will find sample function executions
+        //chcemy mieć możliwość zakupu biletów bez konta
+        Customer customer = new Customer("test@test.pl", "Janusz", "Testowy");
+        List<Ticket> ticket2 = cinema1.getHallsList().get(1).getShowList().get(0).buyTicket("B8");
+        //ticket2.get(0).printTicket();
 
-//        Screening screening = cinema1.getScreenings()[0];
-//        screening.reservePlaces("H34", "H35", "H36"); // seats number given
-//        screening.reservePlaces(seat1, seat2, seat3); // other option
-//        screening.reservePlaces(customer, "H34", "H35", "H36"); // reservation for registered customer
-//        movie1 = cinema1.findMovie("James Bon");
-        // ... etc ...
+
     }
 }
